@@ -2,8 +2,8 @@
 A simple genetic algorithm to evolve a population of strings using the edit distance from the target string as the fitness function.
 ### Usage
 ```ruby
-require 'genetic_algorithm'
-ga = GeneticAlgorithm.new(target: 'EVAN', num_pop: 100, num_gen: 50)
+require 'str_genetic_algorithm'
+ga = StrGeneticAlgorithm.new(target: 'EVAN', num_pop: 100, num_gen: 50)
 ga.find_solution(verbose: true)
 ```
 Example output:

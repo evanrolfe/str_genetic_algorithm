@@ -1,8 +1,8 @@
-require_relative 'genetic_algorithm/random'
-require_relative 'genetic_algorithm/individual'
-require_relative 'genetic_algorithm/population'
+require_relative 'str_genetic_algorithm/random'
+require_relative 'str_genetic_algorithm/individual'
+require_relative 'str_genetic_algorithm/population'
 
-class GeneticAlgorithm
+class StrGeneticAlgorithm
   attr_reader :population, :num_gen
 
   def initialize(args={})

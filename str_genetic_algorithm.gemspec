@@ -3,7 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = 'genetic_algorithm'
+  spec.name          = 'str_genetic_algorithm'
   spec.version       = '0.0.1'
   spec.authors       = ['Evan Rolfe']
   spec.email         = ['evanrolfe@gmail.com']

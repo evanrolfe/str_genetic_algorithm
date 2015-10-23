@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GeneticAlgorithm::Population do
+describe StrGeneticAlgorithm::Population do
   include_context 'a_population_with_individuals'
 
   describe '#individuals_sorted_by_fitness' do
@@ -23,18 +23,18 @@ describe GeneticAlgorithm::Population do
     it { is_expected.to eq(1.5) }
   end
 
-  # TODO: Mock calls made to GeneticAlgorithm::Random
+  # TODO: Mock calls made to StrGeneticAlgorithm::Random
   describe '#generate_random_population' do
-    let(:individual) { double(GeneticAlgorithm::Individual) }
+    let(:individual) { double(StrGeneticAlgorithm::Individual) }
 
     before do
-      allow(GeneticAlgorithm::Individual).to receive(:new).and_return(individual)
+      allow(StrGeneticAlgorithm::Individual).to receive(:new).and_return(individual)
     end
 
     subject! { population.send(:generate_random_population) }
 
     it do
-      expect(GeneticAlgorithm::Individual).to have_received(:new).at_least(num_pop).times
+      expect(StrGeneticAlgorithm::Individual).to have_received(:new).at_least(num_pop).times
         .with(target: target)
     end
   end

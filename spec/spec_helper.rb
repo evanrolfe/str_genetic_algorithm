@@ -5,7 +5,7 @@ require 'rspec'
 require 'rspec/its'
 require 'simplecov'
 require 'pry'
-require 'genetic_algorithm'
+require 'str_genetic_algorithm'
 
 SimpleCov.start
 

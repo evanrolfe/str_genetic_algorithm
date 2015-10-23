@@ -1,4 +1,4 @@
-class GeneticAlgorithm
+class StrGeneticAlgorithm
   module Random
     def self.randomize_or_leave_char(char, probability)
       if rand < probability

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GeneticAlgorithm::Individual do
+describe StrGeneticAlgorithm::Individual do
   let(:target) { 'a_random_string' }
   let(:genotype) { 'skdlfnwreovuszo' }
   let(:mutation_p) { 0.1 }
@@ -27,12 +27,12 @@ describe GeneticAlgorithm::Individual do
       let(:random_string) { 'A_RANDOM_STRING' }
 
       before do
-        allow(GeneticAlgorithm::Random).to receive(:generate_string).and_return(random_string)
+        allow(StrGeneticAlgorithm::Random).to receive(:generate_string).and_return(random_string)
       end
 
       subject! { individual }
 
-      it { expect(GeneticAlgorithm::Random).to have_received(:generate_string).with(target.length) }
+      it { expect(StrGeneticAlgorithm::Random).to have_received(:generate_string).with(target.length) }
       its(:genotype) { is_expected.to eq(random_string) }
       its(:target) { is_expected.to eq(target) }
       its(:mutation_p) { is_expected.to eq(mutation_p) }
@@ -109,12 +109,12 @@ describe GeneticAlgorithm::Individual do
     let(:genotype) { 'BEFORE_MUTATION' }
 
     before do
-      allow(GeneticAlgorithm::Random).to receive(:randomize_or_leave_char).and_return('A')
+      allow(StrGeneticAlgorithm::Random).to receive(:randomize_or_leave_char).and_return('A')
     end
 
     subject! { individual.mutate }
 
-    it { expect(GeneticAlgorithm::Random).to have_received(:randomize_or_leave_char).exactly(15).times }
+    it { expect(StrGeneticAlgorithm::Random).to have_received(:randomize_or_leave_char).exactly(15).times }
     it { expect(individual.genotype).to eq('AAAAAAAAAAAAAAA') }
   end
 end

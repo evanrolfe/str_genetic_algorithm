@@ -1,4 +1,4 @@
-class GeneticAlgorithm
+class StrGeneticAlgorithm
   class Individual
     attr_reader :genotype, :target, :mutation_p
 

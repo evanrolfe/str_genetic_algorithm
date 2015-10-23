@@ -1,4 +1,4 @@
-class GeneticAlgorithm
+class StrGeneticAlgorithm
   class Population
     attr_accessor :target, :num_pop, :individuals
 
