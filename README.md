@@ -1,5 +1,13 @@
 # Genetic Algorithm
 A simple genetic algorithm to evolve a population of strings using the edit distance from the target string as the fitness function.
+
+### Installation
+```
+git clone git@github.com:evanrolfe/str_genetic_algorithm.git
+cd str_genetic_algorithm/
+gem install str_genetic_algorithm
+```
+
 ### Usage
 ```ruby
 require 'str_genetic_algorithm'
