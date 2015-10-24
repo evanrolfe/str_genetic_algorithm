@@ -3,7 +3,7 @@ class StrGeneticAlgorithm
     attr_reader :genotype, :target, :mutation_p
 
     def initialize(args = {})
-      raise StandardError, "A target string must be declared for a Population!" unless args[:target]
+      raise StandardError, 'A target string must be declared for a Population!' unless args[:target]
       @target = args[:target]
       @genotype = args[:genotype] || Random.generate_string(@target.length)
       @mutation_p = args[:mutation_p] || 0.05
@@ -21,19 +21,19 @@ class StrGeneticAlgorithm
     end
 
     #Crossover function - recombines two individuals
-    def +(spouse)
+    def +(other)
       father_genotype = genotype
-      mother_genotype = spouse.genotype
+      mother_genotype = other.genotype
       half_i = genotype.length / 2
 
       child_genotype =
-        mother_genotype[0 .. half_i - 1] +
-        father_genotype[half_i .. genotype.length]
+        mother_genotype[0..half_i - 1] +
+        father_genotype[half_i..genotype.length]
 
       child = Individual.new(
-        :target => target,
-        :mutation_p => mutation_p,
-        :genotype => child_genotype
+        target: target,
+        mutation_p: mutation_p,
+        genotype: child_genotype
       )
 
       child.mutate

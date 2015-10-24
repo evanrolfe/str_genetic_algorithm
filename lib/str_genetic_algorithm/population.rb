@@ -12,10 +12,10 @@ class StrGeneticAlgorithm
       new_individuals = []
       i = 0
 
-      until new_individuals.length == individuals.length do
+      until new_individuals.length == individuals.length
         #Crossover each member in the array with the one after and the on after that
-        new_individuals << best_half[(i+1) % best_half.length] + best_half[i % best_half.length]
-        new_individuals << best_half[(i+2) % best_half.length] + best_half[i % best_half.length]
+        new_individuals << best_half[(i + 1) % best_half.length] + best_half[i % best_half.length]
+        new_individuals << best_half[(i + 2) % best_half.length] + best_half[i % best_half.length]
         i += 1
       end
 
@@ -33,11 +33,11 @@ class StrGeneticAlgorithm
     end
 
     def sum_fitness
-      individuals.inject(0.0) { |sum,n| sum += n.fitness }
+      individuals.map(&:fitness).reduce(:+)
     end
 
     def best_half
-      half_i = ((individuals.length/2).floor-1)
+      half_i = (individuals.length / 2).floor - 1
       individuals_sorted_by_fitness[0..half_i]
     end
 
@@ -48,11 +48,11 @@ class StrGeneticAlgorithm
     end
 
     def individuals_sorted_by_fitness
-      @individuals.sort{ |a,b| b.fitness <=> a.fitness }
+      @individuals.sort { |a, b| b.fitness <=> a.fitness }
     end
 
     def to_s
-      "Best: #{best_individual} avg. fitness: #{avg_fitness.to_s}"
+      "Best: #{best_individual} avg. fitness: #{avg_fitness}"
     end
   end
 end

@@ -13,7 +13,7 @@ class StrGeneticAlgorithm
     end
 
     def self.random_char
-      (rand(95)+32).chr
+      (rand(95) + 32).chr
     end
   end
 end
